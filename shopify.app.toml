@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "92f8c840cf72a0a85cacd1ed4beeab00"
+application_url = "https://diagnostic-severe-gpl-midnight.trycloudflare.com"
+embedded = true
+name = "learning-demo-app"
+handle = "learning-demo-app"
+
+[webhooks]
+api_version = "2024-10"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://diagnostic-severe-gpl-midnight.trycloudflare.com/auth/callback",
+  "https://diagnostic-severe-gpl-midnight.trycloudflare.com/auth/shopify/callback",
+  "https://diagnostic-severe-gpl-midnight.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "dawn-hydrogen-storefront.myshopify.com"
+automatically_update_urls_on_dev = true
